@@ -12,6 +12,7 @@ namespace LemApperson
         [SerializeField] private AudioSource _arcade2;
         [SerializeField] private AudioSource _bells;
         [SerializeField] private AudioSource _bicycleHorn;
+        [SerializeField] private AudioSource _busNoise;
         [SerializeField] private AudioSource _click;
         [SerializeField] private AudioSource _doorOpen;
         [SerializeField] private AudioSource _hauntedRoom;
@@ -24,6 +25,7 @@ namespace LemApperson
 
         private void Awake() {
                 Instance = this;
+                PlayBusNoise();
         }
 
         public void PlayAppluase() {
@@ -46,6 +48,15 @@ namespace LemApperson
             _bicycleHorn.Play();
         }
         
+        public void PlayBusNoise()
+        {
+            _busNoise.Play();
+            _busNoise.volume = 0.3f;
+        }
+        
+        public void StopBusNoise() {
+            _busNoise.Stop();
+        }
         public void PlayClick (){
             _click.Play();
         }

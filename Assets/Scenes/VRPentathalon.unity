@@ -36359,6 +36359,7 @@ MonoBehaviour:
   _arcade2: {fileID: 2039775456}
   _bells: {fileID: 2039775455}
   _bicycleHorn: {fileID: 2039775454}
+  _click: {fileID: 0}
   _doorOpen: {fileID: 2039775461}
   _hauntedRoom: {fileID: 2039775459}
   _police: {fileID: 2039775452}
@@ -39743,6 +39744,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2075381811}
     m_Modifications:
+    - target: {fileID: 561078610562555769, guid: a22d7dee13501e64aa67fbe9e010a952,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1052717413}
     - target: {fileID: 3104887571386130506, guid: a22d7dee13501e64aa67fbe9e010a952,
         type: 3}
       propertyPath: m_LocalPosition.x
