@@ -51,7 +51,7 @@ namespace LemApperson
         public void PlayBusNoise()
         {
             _busNoise.Play();
-            _busNoise.volume = 0.3f;
+            _busNoise.volume = 0.7f;
         }
         
         public void StopBusNoise() {
