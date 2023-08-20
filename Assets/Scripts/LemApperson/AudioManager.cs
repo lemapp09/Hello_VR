@@ -25,7 +25,6 @@ namespace LemApperson
 
         private void Awake() {
                 Instance = this;
-                PlayBusNoise();
         }
 
         public void PlayAppluase() {
