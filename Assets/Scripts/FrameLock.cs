@@ -12,6 +12,7 @@ public class FrameLock : MonoBehaviour
 
     private XRSocketInteractor[] _interactors;
     [SerializeField] UnityEvent _onCheck;
+    [SerializeField] GameManager _gameManager;
 
     private void Start()
     {
@@ -27,11 +28,7 @@ public class FrameLock : MonoBehaviour
         if (id != null)
         {
             _enteredCode[0] = id.GetID();
-            if (CheckCode())
-            {
-                _onCheck.Invoke();
-                _audioManager.PlayBells();
-            }
+            DoCodeCheck();
         }
     }
 
@@ -45,11 +42,7 @@ public class FrameLock : MonoBehaviour
         if (id != null)
         {
             _enteredCode[1] = id.GetID();
-            if (CheckCode())
-            {
-                _onCheck.Invoke();
-                _audioManager.PlayBells();
-            }
+            DoCodeCheck();
         }
     }
 
@@ -62,14 +55,20 @@ public class FrameLock : MonoBehaviour
         if (id != null)
         {
             _enteredCode[2] = id.GetID();
-            if (CheckCode())
-            {
-                _onCheck.Invoke();
-                _audioManager.PlayBells();
-            }
+            DoCodeCheck();
         }
     }
 
+    private void DoCodeCheck()
+    {
+        if (CheckCode())
+        {
+            _onCheck.Invoke();
+            _audioManager.PlayBells();
+            _gameManager.ItemFound(2);
+        }
+    }
+    
 
     private bool CheckCode()
     {
