@@ -16,7 +16,7 @@ public class MakeChainDisappear : MonoBehaviour
     private IEnumerator ChainShrink()
     {
         _scale = transform.localScale;
-        while (_scale.x > 0.001f )
+        while (_scale.x > 0.05f )
         {
             _scale = 0.99f * _scale ;
             transform.localScale = _scale;
