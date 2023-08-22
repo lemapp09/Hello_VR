@@ -1,3 +1,4 @@
+using System.Collections;
 using LemApperson;
 using TMPro;
 using UnityEditor;
@@ -99,5 +100,16 @@ public class GameManager : MonoBehaviour
         }  else {
             _chains.SetActive(false);
         }
+    }
+
+    public void EndGame()
+    {
+        StartCoroutine(EndGameRoutine());
+    }
+
+    private IEnumerator EndGameRoutine()
+    {
+        yield return  new WaitForSeconds(10f);
+        Application.Quit();
     }
 }

@@ -10,6 +10,7 @@ public class CountDown : MonoBehaviour
 	[SerializeField] private GameObject _5MinutesLeft;
 	[SerializeField] private GameObject _1MinuteLeft;
 	[SerializeField] private GameObject _GameOver;
+	[SerializeField] private GameManager _gameManager;
 	private bool _1MinuteOn;
 	private bool _5MinutesOn;
 	private bool _GameOverOn;
@@ -54,6 +55,7 @@ public class CountDown : MonoBehaviour
 				_1MinuteOn = false;
 				if(_LocksAndChains) _LocksAndChains.SetActive(false);
 				if(_exitDoor) _exitDoor.OpenExitDoors();
+				_gameManager.EndGame();
 			}
 		}
 	}
